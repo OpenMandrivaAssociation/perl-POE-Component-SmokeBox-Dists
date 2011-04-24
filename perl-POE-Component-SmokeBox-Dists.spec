@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 3
+Release:    %mkrel 4
 
 Summary:    Search for CPAN distributions by cpanid or distribution name
 License:    GPL+ or Artistic
@@ -22,6 +22,7 @@ BuildRequires: perl(Sort::Versions)
 BuildRequires: perl(Test::More)
 BuildRequires: perl(URI)
 Requires: perl(CPAN::DistnameInfo)
+Requires: perl(Sort::Versions)
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
