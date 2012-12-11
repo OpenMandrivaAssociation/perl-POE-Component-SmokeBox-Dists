@@ -1,30 +1,30 @@
 %define upstream_name    POE-Component-SmokeBox-Dists
 %define upstream_version 1.04
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 5
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	6
 
-Summary:    Search for CPAN distributions by cpanid or distribution name
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/POE/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	Search for CPAN distributions by cpanid or distribution name
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/POE/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(CPAN::DistnameInfo)
-BuildRequires: perl(ExtUtils::MakeMaker)
-BuildRequires: perl(File::Fetch)
-BuildRequires: perl(File::Path)
-BuildRequires: perl(File::Spec)
-BuildRequires: perl(IO::Zlib)
-BuildRequires: perl(POE)
-BuildRequires: perl(Sort::Versions)
-BuildRequires: perl(Test::More)
-BuildRequires: perl(URI)
-Requires: perl(CPAN::DistnameInfo)
-Requires: perl(Sort::Versions)
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
+BuildRequires:	perl(CPAN::DistnameInfo)
+BuildRequires:	perl(ExtUtils::MakeMaker)
+BuildRequires:	perl(File::Fetch)
+BuildRequires:	perl(File::Path)
+BuildRequires:	perl(File::Spec)
+BuildRequires:	perl(IO::Zlib)
+BuildRequires:	perl(POE)
+BuildRequires:	perl(Sort::Versions)
+BuildRequires:	perl(Test::More)
+BuildRequires:	perl(URI)
+Requires:	perl(CPAN::DistnameInfo)
+Requires:	perl(Sort::Versions)
+BuildArch:	noarch
 
 %description
 POE::Component::SmokeBox::Dists is a the POE manpage component that
@@ -46,24 +46,42 @@ parameter overrides this behaviour.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 %make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc Changes META.yml README LICENSE
 %{_mandir}/man3/*
-%perl_vendorlib/*
+%{perl_vendorlib}/*
 
+%changelog
+* Sun Apr 24 2011 Funda Wang <fwang@mandriva.org> 1.40.0-5mdv2011.0
++ Revision: 658300
+- rebuild
+
+* Sun Apr 24 2011 Funda Wang <fwang@mandriva.org> 1.40.0-4
++ Revision: 658240
+- more runtime req
+
+* Sun Apr 24 2011 Funda Wang <fwang@mandriva.org> 1.40.0-3
++ Revision: 658231
+- add runtime req
+
+* Sat Apr 23 2011 Funda Wang <fwang@mandriva.org> 1.40.0-2
++ Revision: 657809
+- rebuild for updated spec-helper
+
+* Sun Dec 26 2010 Guillaume Rousse <guillomovitch@mandriva.org> 1.40.0-1mdv2011.0
++ Revision: 625280
+- update to new version 1.04
+
+* Sat Dec 25 2010 Shlomi Fish <shlomif@mandriva.org> 1.20.0-1mdv2011.0
++ Revision: 625063
+- import perl-POE-Component-SmokeBox-Dists
 
