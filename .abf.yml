@@ -1,2 +1,4 @@
+removed_sources:
+  POE-Component-SmokeBox-Dists-1.04.tar.gz: e873076984f13458ab3a2b009d3550826c0c1d16
 sources:
-  "POE-Component-SmokeBox-Dists-1.04.tar.gz": e873076984f13458ab3a2b009d3550826c0c1d16
+  POE-Component-SmokeBox-Dists-1.08.tar.gz: b162fdf1f6038a797f9dcfe6c242db01df84a6ce
