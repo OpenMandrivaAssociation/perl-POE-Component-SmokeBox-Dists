@@ -1,15 +1,15 @@
 %define upstream_name    POE-Component-SmokeBox-Dists
-%define upstream_version 1.04
+%define upstream_version 1.08
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	6
+Release:	1
 
 Summary:	Search for CPAN distributions by cpanid or distribution name
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/POE/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/POE/POE-Component-SmokeBox-Dists-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(CPAN::DistnameInfo)
@@ -84,4 +84,5 @@ perl Makefile.PL INSTALLDIRS=vendor
 * Sat Dec 25 2010 Shlomi Fish <shlomif@mandriva.org> 1.20.0-1mdv2011.0
 + Revision: 625063
 - import perl-POE-Component-SmokeBox-Dists
+
 
