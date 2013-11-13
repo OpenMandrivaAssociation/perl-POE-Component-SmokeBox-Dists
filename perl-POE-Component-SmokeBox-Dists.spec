@@ -13,6 +13,7 @@ Source0:	http://www.cpan.org/modules/by-module/POE/POE-Component-SmokeBox-Dists-
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(CPAN::DistnameInfo)
+BuildRequires: perl(Capture::Tiny)
 BuildRequires:	perl(ExtUtils::MakeMaker)
 BuildRequires:	perl(File::Fetch)
 BuildRequires:	perl(File::Path)
