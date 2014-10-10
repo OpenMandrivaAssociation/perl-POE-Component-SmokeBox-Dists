@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	1
+Release:	2
 
 Summary:	Search for CPAN distributions by cpanid or distribution name
 License:	GPL+ or Artistic
